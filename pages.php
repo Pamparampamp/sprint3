@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Admin Area | Dashboard</title>
+    <title>PAGES PHP</title>
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -94,82 +94,16 @@
                 <h2>PHP CRUD PHP DISPLAY</h2>
             
                 <hr> 
-                <a href="insertdata.php" class="btn btn-success" style="margin-left: 80%;" > ADD DATA</a>
+                <textarea  style="width:25em; height:25em" >  </textarea>
                 <br>
                 <hr> 
 
-            <?php
+     
 
-            $connection = mysqli_connect("localhost","root","mysql","phpcrud");
-            $db = mysqli_select_db($connection,'phpcrud');
+        
 
-            $query = "SELECT * FROM students";
-            $query_run = mysqli_query($connection, $query);
+         
 
-            ?>
-
-    <table class="table table-bordered" style="background-color: white;" >
-        <thead class="table-dark">
-                        <tr>
-
-                                <th>  ID       </th>
-                                <th>  First Name      </th>
-                                <th>  Last Name      </th>
-                                <th>  Course       </th>
-                                <th>  Contact      </th>
-                                <th>  EDIT       </th>
-                                <th>  DELETE     </th>
-                        </tr>
-        </thead>        
-
-            <?php
-
-            if ($query_run)
-            {
-                while ($row = mysqli_fetch_array($query_run))
-                {
-
-                    ?>
-                        <tbody>
-                            <tr>
-                            
-                                <th> <?php  echo $row['id'];   ?> </th>
-                               <th> <?php    echo $row['fname'];   ?> </th>
-                            <th> <?php  echo $row['lname'];  ?> </th>
-                            <th> <?php    echo $row['course'];  ?> </th>
-                            <th> <?php   echo $row['contact'];  ?> </th>
-                    <form method="post" action="updatedata.php">
-                    <input type="hidden"  name="id" value="<?php echo $row['id']?>">
-
-                            <th> <input type="submit" name="edit" class="btn btn-primary" value="EDIT"> </th>
-                            </form>
-
-
-                    <form method="post" action="delete.php">
-                    <input type="hidden" name="id"  value="<?php  echo $row['id']   ?>">
-                            <th>  <input type="submit" name="delete" class="btn btn-danger" value="DELETE"></th>
-                              </form>
-                             </tr>
-
-
-                        </tbody> 
-
-
-                    <?php
-
-
-             
-
-
-                }
-            }else 
-            {
-
-            echo "No Record Found";
-
-
-            }
-            ?>
     </table>
             
             </div>
