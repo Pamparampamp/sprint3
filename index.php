@@ -33,10 +33,7 @@
             <li><a href="posts.php">Posts</a></li>
             <li><a href="users.php">Users</a></li>
           </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Welcome, Brad</a></li>
-            <li><a href="login.html">Logout</a></li>
-          </ul>
+       
         </div><!--/.nav-collapse -->
       </div>
     </nav>
